@@ -59,16 +59,17 @@ button {
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 1008px;
+    width: 512px;
     border: 10px solid yellow;
     border-radius: 10px;
 }
 
 .grid {
-    height: 16px;
-    width: 16px;
+    height: 32px;
+    width: 32px;
     background-color: white;
     box-sizing: border-box;
+    /* border: 2px solid blue; */
 }
 
 .drawMode,

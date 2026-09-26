@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Rubik";
+    src: url(./Fonts/Rubik-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "OriginalSurfer";
+    src: url(./Fonts/OriginalSurfer-Regular.ttf);
+}
+
+@font-face {
+    font-family: "HennyPenny";
+    src: url(./Fonts/HennyPenny-Regular.ttf);
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -46,8 +61,7 @@ body {
 }
 
 h1 {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "OriginalSurfer";
   font-weight: 700;
-  font-style: normal;
 }
+

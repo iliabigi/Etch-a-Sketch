@@ -7,6 +7,12 @@ for (let i = 0; i < 2046; i++) {
 }
 
 gridContainer.addEventListener("mouseover", (e) => {
+    //debug coloring outside the grid blocks
+    if (e.target.classList[0] === "container") {
+        return;
+    }
+
+    console.log(e.target.classList[0]);
     console.log(e.target);
     e.target.addEventListener("mouseenter", (e2) => {
         hoverRed(e2.target);

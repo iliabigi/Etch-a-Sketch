@@ -1,7 +1,8 @@
 body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     background-color: gray;
     border: 2px solid red;
@@ -20,4 +21,33 @@ body {
     width: 16px;
     background-color: white;
     box-sizing: border-box;
+}
+
+.drawMode,
+.chooseColor {
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-around;
+    width: 490px;
+}
+
+.txt {
+    display: flex;
+    justify-content: flex-start;
+    /* border: 2px solid red; */
+    flex: 1;
+}
+
+.buttons1 {
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    flex: 1;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }

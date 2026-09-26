@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: "RubikItalic";
+    src: url(./Fonts/Rubik-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
     font-family: "OriginalSurfer";
     src: url(./Fonts/OriginalSurfer-Regular.ttf);
 }
@@ -17,18 +22,46 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: gray;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+.header h1 {
+  font-family: "OriginalSurfer";
+  font-weight: 700;
+}
+
+.txt,
+.buttons1 {
+    font-family: "RubikItalic";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+button {
+    font-family: inherit;
+    width: 75px;
+    height: 40px;
+}
+
+.txt {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.buttons1 {
+    display: flex;
+    align-items: center;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 5px; */
-    
-    width: 1000px;
+    width: 1008px;
+    border: 10px solid yellow;
+    border-radius: 10px;
 }
 
 .grid {
@@ -41,27 +74,8 @@ body {
 .drawMode,
 .chooseColor {
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-around;
     width: 490px;
-}
-
-.txt {
-    display: flex;
-    justify-content: flex-start;
-    /* border: 2px solid red; */
-    flex: 1;
-}
-
-.buttons1 {
-    display: flex;
-    /* justify-content: flex-start; */
-    align-items: center;
-    flex: 1;
-}
-
-h1 {
-  font-family: "OriginalSurfer";
-  font-weight: 700;
 }
 

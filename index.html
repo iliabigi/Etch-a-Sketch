@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing page</title>
-    <script defer src="./script.js"></script>
-    <link href="./styles.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drawing page</title>
+        <script defer src="./script.js"></script>
+        <link href="./styles.css" rel="stylesheet" />
+    </head>
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"> -->
-
-</head>
-
-<body>
-    <div class="header">
-        <h1>WELCOME TO ETCH A SCATCH!</h1>
-    </div>
+    <body>
+        <div class="header">
+            <h1>WELCOME TO ETCH A SCATCH!</h1>
+        </div>
 
         <div class="drawMode">
             <div class="txt">
-                <p>Pick a mode: </p>
+                <p>Pick a mode:</p>
             </div>
             <div class="buttons1">
                 <button type="button">hover</button>
@@ -33,10 +28,10 @@
                 <p>Pick a color:</p>
             </div>
             <div class="buttons1">
-                <button type="button">purple</button>
-                <button type="button">aqua</button>
-                <button type="button">black</button>
-                <button type="button">rainbow</button>
+                <button type="button" id="purple">purple</button>
+                <button type="button" id="aqua">aqua</button>
+                <button type="button" id="black">black</button>
+                <button type="button" id="rainbow">rainbow</button>
             </div>
         </div>
 
@@ -44,8 +39,6 @@
             <button type="button" id="reset">Reset</button>
         </div>
 
-    <div class="container"></div>
-    
-    
-</body>
+        <div class="container"></div>
+    </body>
 </html>

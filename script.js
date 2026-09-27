@@ -16,7 +16,7 @@ gridContainer.addEventListener("mouseover", (e) => {
     // console.log(e.target.classList[0]);
     // console.log(e.target);
     e.target.addEventListener("mouseenter", (e2) => {
-        hoverRed(e2.target);
+        hover(e2.target);
         // console.log(e2.target);
     })
 })
@@ -25,9 +25,21 @@ gridContainer.addEventListener("mouseover", (e) => {
 //     hover(e.target);
 // })
 
-function hoverRed(target) {
-    target.style.backgroundColor = "red";
+function hover(target) {
+    // const chooseColor = document.querySelector("")
+    if (color === "rainbow") {
+        target.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+    } else {
+        target.style.backgroundColor = color;
+    }
 }
+
+//a function to randomly color the round message at the header
+function randomColor() {
+    let res = Math.floor(Math.random() * 256);
+    return res
+}
+
 
 function cleanBoard() {
     [...gridContainer.children].forEach(val => {
@@ -44,9 +56,7 @@ function cleanBoard() {
     oneGrid.style.height = `${576/gridSize}px`;
     oneGrid.style.width = `${576/gridSize}px`;
     gridContainer.appendChild(oneGrid);
-}
-
-
+    }
 };
 
 const resetButton = document.querySelector(".resetIt");
@@ -56,3 +66,10 @@ resetButton.addEventListener("click", (e) => {
     console.log(e.target);
 })
 
+
+const chooseColor = document.querySelector(".chooseColor .buttons1");
+let color = "";
+chooseColor.addEventListener("click", e => {
+    // console.log(e.target.textContent)
+    color = e.target.textContent;
+})

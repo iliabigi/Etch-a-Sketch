@@ -1,29 +1,43 @@
 const gridContainer = document.querySelector(".container");
 
-//2079 is the very cool size I initially had (if you wanted to use it later)
+let mode = "hover";
+console.log(mode);
+
+const chooseMode = document.querySelector(".drawMode .buttons1");
+chooseMode.addEventListener("click", e => {
+    
+    mode = e.target.textContent; 
+    console.log(mode);
+
+})
+
+//2079 is the really cool size I initially had (if you wanted to use it later)
 for (let i = 0; i < 256; i++) {
     const oneGrid = document.createElement("div");
     oneGrid.classList.add("grid");
     gridContainer.appendChild(oneGrid);
 }
 
-gridContainer.addEventListener("mouseover", (e) => {
-    //debug coloring outside the grid blocks
-    if (e.target.classList[0] === "container") {
-        return;
-    }
-    //debugging
-    // console.log(e.target.classList[0]);
-    // console.log(e.target);
-    e.target.addEventListener("mouseenter", (e2) => {
-        hover(e2.target);
-        // console.log(e2.target);
+if (mode === "click") {
+    gridContainer.addEventListener("click", (e) => {
+        hover(e.target);
+        })
+    } else if (mode === "hover") {
+        gridContainer.addEventListener("mouseover", (e) => {
+        //debug coloring outside the grid blocks
+        if (e.target.classList[0] === "container") {
+            return;
+        }
+        //debugging
+        // console.log(e.target.classList[0]);
+        // console.log(e.target);
+        e.target.addEventListener("mouseenter", (e2) => {
+            hover(e2.target);
+            // console.log(e2.target);
+        })
     })
-})
+}
 
-// gridContainer.addEventListener("click", (e) => {
-//     hover(e.target);
-// })
 
 function hover(target) {
     // const chooseColor = document.querySelector("")
@@ -68,8 +82,10 @@ resetButton.addEventListener("click", (e) => {
 
 
 const chooseColor = document.querySelector(".chooseColor .buttons1");
-let color = "";
+let color = "purple";
 chooseColor.addEventListener("click", e => {
     // console.log(e.target.textContent)
     color = e.target.textContent;
 })
+
+

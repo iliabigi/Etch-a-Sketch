@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector(".container");
 
-//2079
+//2079 is the very cool size I initially had (if you wanted to use it later)
 for (let i = 0; i < 256; i++) {
     const oneGrid = document.createElement("div");
     oneGrid.classList.add("grid");
@@ -12,9 +12,9 @@ gridContainer.addEventListener("mouseover", (e) => {
     if (e.target.classList[0] === "container") {
         return;
     }
-
-    console.log(e.target.classList[0]);
-    console.log(e.target);
+    //debugging
+    // console.log(e.target.classList[0]);
+    // console.log(e.target);
     e.target.addEventListener("mouseenter", (e2) => {
         hoverRed(e2.target);
         // console.log(e2.target);
@@ -28,4 +28,31 @@ gridContainer.addEventListener("mouseover", (e) => {
 function hoverRed(target) {
     target.style.backgroundColor = "red";
 }
+
+function cleanBoard() {
+    [...gridContainer.children].forEach(val => {
+        if (val.style.backgroundColor !== "white") {
+            val.style.backgroundColor = "white";
+        }
+    });
+    let gridSize = Number(prompt("How many squares per side? (leave empty for default value)", Number(16)));
+    gridSizeFull = gridSize * gridSize;
+    gridContainer.replaceChildren();
+    for (let i = 0; i < gridSizeFull; i++) {
+    const oneGrid = document.createElement("div");
+    oneGrid.classList.add("grid");
+    oneGrid.style.height = `${576/gridSize}px`;
+    oneGrid.style.width = `${576/gridSize}px`;
+    gridContainer.appendChild(oneGrid);
+}
+
+
+};
+
+const resetButton = document.querySelector(".resetIt");
+
+resetButton.addEventListener("click", (e) => {
+    cleanBoard();
+    console.log(e.target);
+})
 

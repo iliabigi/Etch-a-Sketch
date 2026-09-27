@@ -27,8 +27,8 @@ body {
 }
 
 .header h1 {
-  font-family: "OriginalSurfer";
-  font-weight: 700;
+    font-family: "OriginalSurfer";
+    font-weight: 700;
 }
 
 .drawMode,
@@ -54,7 +54,7 @@ body {
     border: none;
     border-radius: 2px;
 }
-    
+
 #purple {
     background-color: rgb(185, 147, 221);
 }
@@ -102,6 +102,3 @@ button {
     background-color: white;
     box-sizing: border-box;
 }
-
-
-

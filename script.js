@@ -17,36 +17,35 @@ for (let i = 0; i < 256; i++) {
 }
 
 //event listeners for different modes; hovering and clicking
-gridContainer.addEventListener("click", e => {
+gridContainer.addEventListener("click", (e) => {
     if (mode !== "click") return;
 
     hover(e.target);
-})
+});
 
-gridContainer.addEventListener("mouseover", e => {
+gridContainer.addEventListener("mouseover", (e) => {
     if (mode !== "hover") return;
 
     //debug coloring outside the grid blocks
     if (e.target.classList[0] === "container") return;
-    
-    e.target.addEventListener("mouseenter", e2 => {
+
+    e.target.addEventListener("mouseenter", (e2) => {
         if (mode !== "hover") return;
         hover(e2.target);
-    })
-})
+    });
+});
 
-resetButton.addEventListener("click", e => {
+resetButton.addEventListener("click", (e) => {
     cleanBoard();
-    console.log(e.target);
-})
+});
 
-chooseColor.addEventListener("click", e => {
+chooseColor.addEventListener("click", (e) => {
     color = e.target.textContent;
-})
+});
 
-chooseMode.addEventListener("click", e => {
-    mode = e.target.textContent; 
-})
+chooseMode.addEventListener("click", (e) => {
+    mode = e.target.textContent;
+});
 
 function hover(target) {
     if (color === "rainbow") {
@@ -59,11 +58,11 @@ function hover(target) {
 //a function to randomly color the round message at the header
 function randomColor() {
     let res = Math.floor(Math.random() * 256);
-    return res
+    return res;
 }
 
 function cleanBoard() {
-    [...gridContainer.children].forEach(val => {
+    [...gridContainer.children].forEach((val) => {
         if (val.style.backgroundColor !== "white") {
             val.style.backgroundColor = "white";
         }
@@ -76,10 +75,8 @@ function cleanBoard() {
     for (let i = 0; i < gridSizeFull; i++) {
         const oneGrid = document.createElement("div");
         oneGrid.classList.add("grid");
-        oneGrid.style.height = `${576/gridSize}px`;
-        oneGrid.style.width = `${576/gridSize}px`;
+        oneGrid.style.height = `${576 / gridSize}px`;
+        oneGrid.style.width = `${576 / gridSize}px`;
         gridContainer.appendChild(oneGrid);
     }
-};
-
-
+}

@@ -20,6 +20,7 @@ for (let i = 0; i < 256; i++) {
 
 gridContainer.addEventListener("click", (e) => {
     if (mode !== "click") return;
+    console.log("BUG1")
     hover(e.target);
 })
 
@@ -34,6 +35,8 @@ gridContainer.addEventListener("mouseover", (e) => {
     // console.log(e.target.classList[0]);
     // console.log(e.target);
     e.target.addEventListener("mouseenter", (e2) => {
+        if (mode !== "hover") return;
+        console.log("BUG3")
         hover(e2.target);
         // console.log(e2.target);
     })
@@ -41,6 +44,7 @@ gridContainer.addEventListener("mouseover", (e) => {
 
 
 function hover(target) {
+    console.log("BUG2");
     // const chooseColor = document.querySelector("")
     if (color === "rainbow") {
         target.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;

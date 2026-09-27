@@ -8,7 +8,6 @@ chooseMode.addEventListener("click", e => {
     
     mode = e.target.textContent; 
     console.log(mode);
-
 })
 
 //2079 is the really cool size I initially had (if you wanted to use it later)
@@ -18,25 +17,27 @@ for (let i = 0; i < 256; i++) {
     gridContainer.appendChild(oneGrid);
 }
 
-if (mode === "click") {
-    gridContainer.addEventListener("click", (e) => {
-        hover(e.target);
-        })
-    } else if (mode === "hover") {
-        gridContainer.addEventListener("mouseover", (e) => {
-        //debug coloring outside the grid blocks
-        if (e.target.classList[0] === "container") {
-            return;
-        }
-        //debugging
-        // console.log(e.target.classList[0]);
-        // console.log(e.target);
-        e.target.addEventListener("mouseenter", (e2) => {
-            hover(e2.target);
-            // console.log(e2.target);
-        })
+
+gridContainer.addEventListener("click", (e) => {
+    if (mode !== "click") return;
+    hover(e.target);
+})
+
+
+gridContainer.addEventListener("mouseover", (e) => {
+    if (mode !== "hover") return;
+    //debug coloring outside the grid blocks
+    if (e.target.classList[0] === "container") {
+        return;
+    }
+    //debugging
+    // console.log(e.target.classList[0]);
+    // console.log(e.target);
+    e.target.addEventListener("mouseenter", (e2) => {
+        hover(e2.target);
+        // console.log(e2.target);
     })
-}
+})
 
 
 function hover(target) {

@@ -50,6 +50,10 @@ body {
     align-items: center;
 }
 
+#toggleOpacity {
+    background-color: red;
+}
+
 .chooseColor .buttons1 button {
     border: none;
     border-radius: 2px;

@@ -8,6 +8,10 @@ let mode = "hover";
 const chooseColor = document.querySelector(".chooseColor .buttons1");
 let color = "purple";
 
+const toggleOpacity = document.querySelector("#toggleOpacity");
+let opacity = false;
+
+
 //creating the squares
 //2079 is the really cool size I initially had (if you wanted to use it later)
 for (let i = 0; i < 256; i++) {
@@ -47,11 +51,38 @@ chooseMode.addEventListener("click", (e) => {
     mode = e.target.textContent;
 });
 
-function hover(target) {
-    if (color === "rainbow") {
-        target.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+toggleOpacity.addEventListener("click", (e) => {
+    opacity = !opacity;
+    if (opacity) {
+        toggleOpacity.style.backgroundColor = "green";
     } else {
-        target.style.backgroundColor = color;
+        toggleOpacity.style.backgroundColor = "red";
+    }
+})
+
+function hover(target) {
+    if (opacity) {
+        if (color === "rainbow") {
+            if (target.style.backgroundColor === "") {
+                target.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+                target.style.opacity = 0.1;
+            } else {
+                target.style.opacity = Number(target.style.opacity) + 0.1;
+            }
+        } else {
+            if (target.style.backgroundColor !== color) {
+                target.style.backgroundColor = color;
+                target.style.opacity = 0.1;
+            } else {
+                target.style.opacity = Number(target.style.opacity) + 0.1;
+            }
+        }
+    } else {
+        if (color === "rainbow") {
+            target.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+        } else {
+            target.style.backgroundColor = color;
+        }
     }
 }
 
